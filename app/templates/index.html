@@ -1,26 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task App</title>
-   <style>
-    ul{
-        list-style-type: none;
-        color: blueviolet;
-    }
-   </style>
-</head>
-<body>
-   
-    <h1>USERS</h1>
-    <ul>
-        {% for user in users %}
-            <li>{{ loop.index }}. {{ user }}</li>
-        {% endfor %}
-    </ul>
+{% extends "base.html" %}
+{% block content %}
+<h1 class="bg-primary ">Welcome to home page</h1>
+{% endblock %}
     
     
     
-</body>
-</html>
