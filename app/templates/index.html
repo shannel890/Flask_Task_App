@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
-<h1 class="bg-primary ">Welcome to home page</h1>
+<h1 style="color: aquamarine; font-size: 4em;text-decoration: underline;">Welcome to home page</h1>
+<p><h1>This is the home page of my page .</h1></p>
+<ul class="list-group">
+    {% for user in users %}
+        <li class="list-group-item">{{ loop.index }}. {{ user }}</li>
+        <!-- {{ users}} -->
+    {% endfor %}
+
+
 {% endblock %}
     
     

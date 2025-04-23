@@ -1,4 +1,18 @@
 {% extends "base.html" %}
+
 {% block content %}
-<h1 class="text-light bg-primary">This is tasks page</h1>
+<h1 style="color: navy;font-size: 4em;text-decoration: underline;">This is tasks page</h1>
+<form action="" method="post">
+    {{ form.title.label(class="form-label") }}
+    {{ form.title(size=20,class="form-control w-100") }}
+
+    {{ form.description.label(class="form-label") }}
+    {{ form.description (class="form-control w-100")}}
+
+    {{ form.completed.label (class="form-label")}}
+    {{ form.completed }}
+
+    {{ form.submit (class=" btn-primary,form-control w-100")}}
+
+</form>
 {% endblock %}
