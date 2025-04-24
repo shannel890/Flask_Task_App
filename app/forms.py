@@ -2,10 +2,10 @@ from flask_wtf import FlaskForm
 from wtforms import StringField,TextAreaField,BooleanField,SubmitField,PasswordField
 from wtforms.validators import DataRequired
 class Taskform(FlaskForm):
-    title = StringField('Task Title')
-    description = TextAreaField('Task Description')
+    title = StringField('Task Title', validators=[DataRequired()])
+    description = TextAreaField('Task Description', validators=[DataRequired()])
     completed = BooleanField('Completed')
-    submit = SubmitField('Register')
+    submit = SubmitField('Submit')
 
 
 class Userform(FlaskForm):

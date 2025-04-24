@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
 
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" 
           rel="stylesheet" 
           integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" 
@@ -13,7 +12,6 @@
 </head>
 <body>
 
-    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
             <a class="navbar-brand" href="#">WELCOME</a>
@@ -32,25 +30,35 @@
                         <a class="nav-link" href="{{ url_for('tasks') }}">Tasks</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('users') }}">Users</a>
+                        <a class="nav-link" href="{{ url_for('users') }}">SignUp</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('users2') }}">Users</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            {% for category,message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
 
-    <!-- Main Content Area -->
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
     <main class="container my-4">
         {% block content %}
         {% endblock %}
     </main>
 
-    <!-- Footer -->
     <footer class="bg-info text-center text-lg-start w-100 position-fixed bottom-0 py-2">
         <p class="mb-0">&copy; 2025 My Website. All rights reserved.</p>
     </footer>
 
-    <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" 
             integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" 
             crossorigin="anonymous"></script>
