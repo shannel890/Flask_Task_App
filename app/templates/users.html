@@ -2,10 +2,15 @@
 {% block content %}
 <h1>USERS</h1>
 <ul class="list-group">
-    {% for user in users %}
+    {% for user in users|reverse %}
         <li class="list-group-item">{{ loop.index }}. {{ user }}</li>
-        <!-- {{ users}} -->
+       
+
+        <form action="{{ url_for('delete_user', user_id=user.id) }}" method="post" onsubmit="return confirm('Are you sure you want to delete this user?');">
+            <button type="submit" class="btn btn-danger btn-xx-lg">Delete</button>
+        </form>
     {% endfor %}
+</ul>
    
 
 {% endblock %}

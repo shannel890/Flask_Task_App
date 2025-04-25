@@ -14,3 +14,8 @@ class Userform(FlaskForm):
     last_name = StringField('Lastname',validators=[DataRequired()])
     password = PasswordField('Password',validators=[DataRequired()])
     submit = SubmitField('Register',validators=[DataRequired()])
+
+class Loginform(FlaskForm):
+    username = StringField('Username',validators=[DataRequired()])
+    password = PasswordField('Password',validators=[DataRequired()])
+    submit = SubmitField('login')
